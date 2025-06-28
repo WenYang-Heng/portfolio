@@ -1,21 +1,11 @@
 import Header from "../Header";
-
-const techStacks = [
-    {
-        title: "Frontend",
-        stacks: [
-            {
-                name: "React",
-                icon: "something"
-            },
-        ]
-    }
-]
+import TechStacks from "./TechStacks";
 
 function Skills() {
     return (
         <section>
             <Header title={"Skills"}/>
+            <TechStacks />
         </section>
     );
 }

@@ -1,8 +1,7 @@
 function Header({ title }) {
     return (
         <>
-            <h1 className="text-4xl font-bold border-b-8 border-primary pb-2 w-16 text-nowrap">{ title }</h1>
-            <span className="bg-primary h-4 w-4"></span>
+            <h1 className="text-2xl font-bold border-b-6 border-primary pb-1 mb-3 w-12 text-nowrap">{ title }</h1>
         </>
     );
 }
