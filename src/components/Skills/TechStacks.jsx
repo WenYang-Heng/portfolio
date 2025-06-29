@@ -50,15 +50,15 @@ function TechStacks () {
     return(
         (techStacks.map((stack, idx) => 
             <>
-                <div key={stack.title} className={`grid grid-cols-2 ${idx != techStacks.length - 1 ? "my-6" : "mt-6"}`}>
-                    <h2 className="text-lg">{stack.title}</h2>
-                    <div className="flex flex-wrap gap-4 gap-y-2">
+                <div key={stack.title} className={`grid grid-cols-2 text-xl ${idx != techStacks.length - 1 ? "my-6" : "mt-6"}`}>
+                    <h2>{stack.title}</h2>
+                    <div className="flex flex-wrap gap-6 gap-y-3">
                         {stack.skills.map((skill) => (
                             <div key={skill.name} className="flex items-center gap-2">
                                 <IconContext.Provider value={{ size: '24px', color: skill.color }}>
                                     <span>{skill.icon}</span>
                                 </IconContext.Provider>
-                                <p className="">{skill.name}</p>
+                                <p>{skill.name}</p>
                             </div>
                         ))}
                     </div>
