@@ -1,8 +1,9 @@
 import { FaReact } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiJavascript } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiJavascript, SiSqlite } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
 import { IconContext } from "react-icons";
+import FirebaseLogo from "../../logos/Firebase-Logo";
 
 const techStacks = [
     {
@@ -40,8 +41,18 @@ const techStacks = [
         skills: [
             {
                 name: "MySQL",
-                icon: <GrMysql />
+                icon: <GrMysql />,
+                color: "#00758F"
             },
+            {
+                name: "SQLite",
+                icon: <SiSqlite />,
+                color: "#003B57"
+            },
+            {
+                name: "Firebase",
+                icon: <FirebaseLogo />
+            }
         ]
     },
 ]
@@ -63,7 +74,7 @@ function TechStacks () {
                         ))}
                     </div>
                 </div>
-                {idx != techStacks.length - 1 && <div className="w-full h-[0.5px] bg-gradient-to-r from-transparent from-5% via-primary to-transparent to-95%"></div>  }          
+                {idx != techStacks.length - 1 && <div className="w-full h-[0.5px] bg-gradient-to-r from-transparent from-5% via-gray-700 to-transparent to-95%"></div>  }          
             </>
         ))
     );

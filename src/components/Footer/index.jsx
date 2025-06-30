@@ -20,9 +20,9 @@ const socials = [
 
 function Footer() {
     return(
-        <footer className="mt-12 text-center text-sm text-gray">
-            <div className="w-full h-[0.5px] bg-gradient-to-r from-transparent from-5% via-primary to-transparent to-95%"></div>
-            <div className="flex justify-center items-center gap-4 py-8">
+        <footer className="font-roboto mt-24 text-center text-lg text-gray">
+            <div className="w-full h-[0.5px] bg-gradient-to-r from-transparent from-5% via-gray-700 to-transparent to-95%"></div>
+            <div className="flex justify-center items-center gap-4 py-12">
                 {socials.map((social, idx) => (
                     <>
                         <div key={social.title} className="flex items-center gap-1">
@@ -31,7 +31,7 @@ function Footer() {
                             </IconContext.Provider>
                             <p>{social.title}</p>
                         </div>
-                        {(idx != socials.length - 1) && <hr className="rounded-full w-1 h-1 bg-primary border-0"/>}
+                        {(idx != socials.length - 1) && <hr className="rounded-full w-2 h-2 bg-primary border-0"/>}
                     </>
                 ))}
             </div>

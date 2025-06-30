@@ -1,10 +1,83 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-Thin.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-ExtraLight.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-Light.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-Regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-Medium.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-SemiBold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-Bold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-ExtraBold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("./fonts/roboto/Roboto-Black.ttf") format("ttf");
+}
+
 @theme {
     --color-main-bg: #01050B;
     --color-primary: #2CBF9D;
     --color-secondary: #423F77;
-    --color-gray: #DEE2E6
+    --color-gray: #DEE2E6;
+    --font-roboto: "Roboto", sans-serif;
 }
 
 body {
