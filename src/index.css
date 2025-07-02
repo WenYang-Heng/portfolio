@@ -77,10 +77,41 @@
     --color-primary: #2CBF9D;
     --color-secondary: #423F77;
     --color-gray: #DEE2E6;
+    --color-gray-light: #CED4DA;
     --font-roboto: "Roboto", sans-serif;
+
+    --animate-fadeinup: fadeinup 0.35s ease-in-out;
+
+    @keyframes fadeinup {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    --animate-slidein: slidein 0.3s ease-in-out 200ms forwards;
+
+    @keyframes slidein {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
 }
 
 body {
     background-color: var(--color-main-bg);
     color: white;
+    font-family: var(--font-roboto);
 }
