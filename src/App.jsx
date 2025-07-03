@@ -53,8 +53,8 @@ function App() {
           <div>
             <p className='leading-none text-gray-light'>Hello, I'm</p>
             <h1 className='text-5xl font-bold text-primary'>Wen Yang</h1>
-            <p className='mt-2 text-gray-light'>A software engineering student looking internship opportunites. I have good work ethic and is always willing to learn new technologies.</p>
-            <button className='bg-primary mt-2 px-4 py-1 rounded-sm text-gray-light'>View CV</button>
+            <p className='mt-2 mb-4 text-gray-light'>A software engineering student looking internship opportunites. I have good work ethic and is always willing to learn new technologies.</p>
+            <a href='https://drive.google.com/file/d/1VgvcP-ZmJ1JTVuix-79MV24hstxbNFLF/view?usp=sharing' target='_blank' className='bg-primary px-4 py-2 rounded-sm text-gray-light'>View CV</a>
           </div>
           <Experience />
         </section>
