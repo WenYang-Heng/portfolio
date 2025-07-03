@@ -1,11 +1,13 @@
 import Header from "../Header";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs, SiTypescript, SiJavascript, SiSqlite } from "react-icons/si";
+import { BiLogoSpringBoot } from "react-icons/bi";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
 import { IconContext } from "react-icons";
 import FirebaseLogo from "../../logos/Firebase-Logo";
 import { useElementInView } from "../../hooks/useElementInView";
+import { useEffect } from "react";
 
 const techStacks = [
     {
@@ -54,6 +56,11 @@ const techStacks = [
             {
                 name: "Firebase",
                 icon: <FirebaseLogo />
+            },
+            {
+                name: "Spring Boot",
+                icon: <BiLogoSpringBoot />,
+                color: "#6DB33F"
             }
         ]
     },
@@ -61,9 +68,10 @@ const techStacks = [
 
 function Skills() {
     const [elementRef, isInView] = useElementInView({ threshold: 0.1 });
+
     return (
-        <section>
-            <Header title={"Skills"}/>
+        <>
+            <Header title={"Skills"} />
             {techStacks.map((stack, idx) => 
                 <>
                     <div key={stack.title} className={`grid md:grid-cols-2 text-gray-light ${idx != techStacks.length - 1 ? "my-6" : "mt-6"} ${isInView ? "animate-fadeinup" : "opacity-0"}`}>
@@ -81,8 +89,8 @@ function Skills() {
                     </div>
                     {idx != techStacks.length - 1 && <div className={`w-full h-[0.5px] bg-gradient-to-r from-transparent from-5% via-gray-700 to-transparent to-95% ${isInView ? "animate-fadeinup" : "opacity-0"}`}></div>}          
                 </>
-            )}
-        </section>
+            )}        
+        </>
     );
 }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -12,9 +12,37 @@ import Navbar from './components/Navbar'
 
 
 function App() {
+  const [activeSection, setActiveSection] = useState("");
+  const sectionRefs = useRef([]);
+  sectionRefs.current = [];
+
+  const addRefs = (el) => {
+    if(el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      })
+    }), { threshold: 0.5 });
+
+    sectionRefs.current.forEach((section) => observer.observe(section));
+
+    return () => {
+      sectionRefs.current.forEach((section) => {
+        observer.unobserve(section);
+      })
+    }
+    
+  })
   return (
     <>
-      <Navbar />
+      <Navbar activeSection={activeSection} />
       <div id='main-container' className='mx-4 md:w-[80%] md:m-auto text-gray max-w-5xl text-lg'>
         {/* Background */}
         <div
@@ -23,7 +51,7 @@ function App() {
           [mask-image:linear-gradient(to_bottom,transparent_0%,#01050B_25%,#01050B_80%,transparent_100%)]"
         ></div>
         {/* Main Banner */}
-        <section id='banner' className='py-52 grid md:grid-cols-2 gap-8 items-center h-screen animate-fadeinup'>
+        <section ref={addRefs} id='home' className='py-52 grid md:grid-cols-2 gap-8 items-center h-screen animate-fadeinup'>
           <div>
             <p className='leading-none text-gray-light'>Hello, I'm</p>
             <h1 className='text-5xl font-bold text-primary'>Wen Yang</h1>
@@ -35,14 +63,12 @@ function App() {
 
         {/* About Me */}
         <div className='flex flex-col gap-24'>
-          {/* <section id='about'>
-            <Header title={"About Me"}/>
-            <p>I’m Heng Wen Yang, a second year software engineering student from Universiti Malaya. I have good work ethic and is always willing to learn new technologies. </p>
-          </section> */}
           {/* Skills */}
-          <Skills />
+          <section ref={addRefs} id='skills'>
+            <Skills />
+          </section>
           {/* Projects */}
-          <section id='projects'>
+          <section ref={addRefs} id='projects'>
             <Header title={"Projects"}/>
             <Projects />
           </section>
