@@ -6,7 +6,7 @@ const projects = [
     {
         title: "Programming League National 2025",
         stacks: ["Next.js", "Tailwind", "TypeScript"],
-        description: "A website that showcases an overview of the event Programming League National 2025.",
+        description: "A website that showcases an overview of the event Programming League National 2025. A live leaderboard is implemented by fetching standings from Codeforces API",
         link: "https://programmingleaguenational2025.vercel.app/"
     }
 ]
