@@ -34,7 +34,7 @@ const techStacks = [
                 color: "#F7DF1E"                         
             },
             {
-                name: "Typscript",
+                name: "TypeScript",
                 icon: <SiTypescript />,
                 color: "#3178C6"                       
             }           
