@@ -1,13 +1,13 @@
 import Header from "../Header";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs, SiTypescript, SiJavascript, SiSqlite } from "react-icons/si";
-import { BiLogoSpringBoot } from "react-icons/bi";
+import { BiLogoSpringBoot, BiLogoPostgresql } from "react-icons/bi";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrMysql } from "react-icons/gr";
 import { IconContext } from "react-icons";
 import FirebaseLogo from "../../logos/Firebase-Logo";
 import { useElementInView } from "../../hooks/useElementInView";
-import { useEffect } from "react";
+import { Fragment } from "react";
 
 const techStacks = [
     {
@@ -49,6 +49,11 @@ const techStacks = [
                 color: "#00758F"
             },
             {
+                name: "PostgreSQL",
+                icon: <BiLogoPostgresql />,
+                color: "#0064a5"
+            },
+            {
                 name: "SQLite",
                 icon: <SiSqlite />,
                 color: "#003B57"
@@ -67,17 +72,17 @@ const techStacks = [
 ]
 
 function Skills() {
-    const [elementRef, isInView] = useElementInView({ threshold: 0.1 });
+    const [elementRef, isInView] = useElementInView({ threshold: 0.7, once: true });
 
     return (
-        <>
+        <div ref={elementRef}>
             <Header title={"Skills"} />
             {techStacks.map((stack, idx) => 
-                <>
-                    <div key={stack.title} className={`grid md:grid-cols-2 text-gray-light ${idx != techStacks.length - 1 ? "my-6" : "mt-6"} ${isInView ? "animate-fadeinup" : "opacity-0"}`}>
-                        <h2 ref={elementRef} className="text-xl">{stack.title}</h2>
+                <Fragment key={stack.title}>
+                    <div className={`grid md:grid-cols-2 text-gray-light ${idx != techStacks.length - 1 ? "my-6" : "mt-6"} ${isInView ? "animate-fadeinup" : "opacity-0"}`}>
+                        <h2 className="text-xl">{stack.title}</h2>
                         <div className="flex flex-wrap gap-6 gap-y-3 mt-2">
-                            {stack.skills.map((skill, index) => (
+                            {stack.skills.map((skill) => (
                                 <div key={skill.name} className={`flex items-center gap-2`}>
                                     <IconContext.Provider value={{ size: '24px', color: skill.color }}>
                                         <span>{skill.icon}</span>
@@ -88,9 +93,9 @@ function Skills() {
                         </div>
                     </div>
                     {idx != techStacks.length - 1 && <div className={`w-full h-[0.5px] bg-gradient-to-r from-transparent from-5% via-gray-700 to-transparent to-95% ${isInView ? "animate-fadeinup" : "opacity-0"}`}></div>}          
-                </>
+                </Fragment>
             )}        
-        </>
+        </div>
     );
 }
 

@@ -2,6 +2,12 @@ import Event from "./Event";
 
 const experiences = [
     {
+        position: "RPA Intern",
+        location: "Maxis Broadband Sdn. Bhd.",
+        date: "Aug 2025 - Feb 2026",
+        type: "Internship"
+    },
+    {
         position: "Assistant Head of Technical Dept.",
         location: "Universiti Malaya",
         date: "Mar 2025 - Jun 2025",
