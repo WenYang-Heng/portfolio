@@ -47,8 +47,8 @@ function Navbar({ activeSection }) {
             <div className={`fixed top-0 right-0 h-full w-full z-10 p-4 bg-[#0F0F10] text-2xl transition-transform duration-250 ${isNavOpen ? "translate-x-0" : "translate-x-full" }`}>
                 <ul className="flex flex-col justify-center items-center h-full gap-12">
                     {navlinks.map(link => (
-                        <li>                            
-                            <button onClick={() => handleNavClick(link.href)} className="hover:text-primary transition-colors duration-200">
+                        <li key={link.name}>                            
+                            <button onClick={() => handleNavClick(link.href)} className="cursor-pointer hover:text-primary transition-colors duration-200">
                                 {link.name}
                             </button>
                         </li>
@@ -61,7 +61,7 @@ function Navbar({ activeSection }) {
                 <ul className="flex justify-end text-lg gap-12">
                     {navlinks.map(link => (
                         <li key={link.name} className="hover:text-primary transition-colors duration-200">
-                            <button onClick={() => handleNavClick(link.href)}>{link.name}</button>
+                            <button className="cursor-pointer" onClick={() => handleNavClick(link.href)}>{link.name}</button>
                         </li>
                     ))}
                 </ul>
